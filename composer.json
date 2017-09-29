@@ -1,0 +1,19 @@
+{
+    "name": "marcosh/php-sum-types",
+    "description": "another attempt at sum types in PHP",
+    "authors": [
+        {
+            "name": "Marco Perone",
+            "email": "pasafama@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "kahlan/kahlan": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marcosh\\SumType\\": "src/"
+        }
+    }
+}
