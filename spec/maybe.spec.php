@@ -63,3 +63,21 @@ describe("Is nothing", function () {
         )->toBe(true);
     });
 });
+
+describe("With default", function () {
+    it("returns the value on just", function () {
+        $just42 = Maybe::just(42);
+
+        expect(
+            $just42->withDefault('default')
+        )->toBe(42);
+    });
+
+    it("returns the default value on nothing", function () {
+        $nothing = Maybe::nothing();
+
+        expect(
+            $nothing->withDefault('default')
+        )->toBe('default');
+    });
+});

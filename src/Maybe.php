@@ -72,4 +72,12 @@ final class Maybe
     {
         return !$this->isJust;
     }
+
+    /**
+     * @return mixed
+     */
+    public function withDefault($default)
+    {
+        return $this->isJust ? $this->value : $default;
+    }
 }
