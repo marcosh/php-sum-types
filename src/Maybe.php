@@ -62,4 +62,14 @@ final class Maybe
     ) {
         return $this->isJust ? $just($this->value) : $nothing();
     }
+
+    public function isJust() : bool
+    {
+        return $this->isJust;
+    }
+
+    public function isNothing() : bool
+    {
+        return !$this->isJust;
+    }
 }
