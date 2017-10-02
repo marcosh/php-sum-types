@@ -80,4 +80,12 @@ final class Maybe
     {
         return $this->isJust ? $this->value : $default;
     }
+
+    /**
+     * @return mixed
+     */
+    public function map(callable $f)
+    {
+        return $this->isJust ? self::just($f($this->value)) : self::nothing();
+    }
 }
