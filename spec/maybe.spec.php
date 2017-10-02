@@ -99,3 +99,21 @@ describe("Map", function () {
         )->toEqual(Maybe::nothing());
     });
 });
+
+describe("Map with default", function () {
+    it("maps the value with the provided function", function () {
+        $just42 = Maybe::just(42);
+
+        expect(
+            $just42->mapWithDefault(function ($x) {return $x + 1;}, 77)
+        )->toBe(43);
+    });
+
+    it("maps nothing to the default value", function () {
+        $nothing = Maybe::nothing();
+
+        expect(
+            $nothing->mapWithDefault(function ($x) {return $x +1;}, 77)
+        )->toBe(77);
+    });
+});
